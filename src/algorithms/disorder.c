@@ -1,1 +1,27 @@
 #include "push_swap.h"
+
+float	count_disorder(t_node *stack, int size)
+{
+	t_node	*current;
+	t_node	*to_compare;
+	int		inversions;
+	int		max_inversions;
+
+	if (!stack || !stack->next || size <= 1)
+		return (0.0);
+	max_inversions = (size * (size - 1)) / 2;
+	inversions = 0;
+	current = stack;
+	while (current)
+	{
+		to_compare = current->next;
+		while (to_compare)
+		{
+			if (current->value > to_compare->value)
+				inversions++;
+			to_compare = to_compare->next;
+		}
+		current = current->next;
+	}
+	return ((float)inversions / (float)max_inversions);
+}

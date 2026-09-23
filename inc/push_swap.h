@@ -6,7 +6,7 @@
 /*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 13:25:46 by adorofei          #+#    #+#             */
-/*   Updated: 2026/09/12 16:51:57 by adorofei         ###   ########.fr       */
+/*   Updated: 2026/09/23 17:02:19 by adorofei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
-# include <stdint.h>
+// # include <stdint.h>
 # include <limits.h>
 
 // # include "../libft/libft.h"
@@ -24,7 +24,7 @@
 typedef struct s_node
 {
 	int				value;
-	int				index;
+	// int				index;
 	struct s_node	*next;
 	struct s_node	*prev;
 } t_node;
@@ -65,8 +65,14 @@ int		is_flag(char *str);
 void	indicate_flag(t_grid *push_swap, char *argv);
 
 /* PARSING ARGV */
-int	process_values(t_grid *push_swap, char *val_str);
+int		process_values(t_grid *push_swap, char *val_str);
 void	parse_args(t_grid *push_swap, int argc, char **argv);
+
+/* COUNTING DISORDER OF THE STACK */
+float	count_disorder(t_node *stack, int size);
+
+/* SORTING */
+void	sort_three(t_grid *push_swap);
 
 /* HELPER FUNCTIONS */
 long	ft_atol(const char *str);
@@ -76,6 +82,6 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		stack_add_back(t_node **stack, t_node *new);
 t_node	*stack_new_node(int	new_value);
 void	free_stack(t_node **stack);
-
+int		stack_size(t_node *stack);
 
 #endif
