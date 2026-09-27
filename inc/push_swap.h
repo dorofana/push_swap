@@ -16,10 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
-// # include <stdint.h>
 # include <limits.h>
-
-// # include "../libft/libft.h"
 
 typedef struct s_node
 {
@@ -34,7 +31,8 @@ typedef enum s_sort_mode
 	MODE_ADAPTIVE,
 	MODE_SIMPLE,
 	MODE_MEDIUM,
-	MODE_COMPLEX
+	MODE_COMPLEX,
+	MODE_BENCH
 } t_sort_mode;
 
 typedef struct s_grid
@@ -45,7 +43,25 @@ typedef struct s_grid
 	int			size_b;
 	float		disorder;
 	t_sort_mode	mode;
+	int			bench_mode; // just to indicate '--bench'
+	t_bench		ops_count;
 } t_grid;
+
+typedef struct s_bench
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+	int	pa;
+	int	pb;
+	int	total_ops;
+} t_bench;
 
 /* OPERATIONS */
 void	sa(t_grid *push_swap);
@@ -71,6 +87,9 @@ void	parse_args(t_grid *push_swap, int argc, char **argv);
 /* COUNTING DISORDER OF THE STACK */
 float	count_disorder(t_node *stack, int size);
 
+/* BENCH MODE */
+void	bench_print(t_grid *push_swap);
+
 /* SORTING */
 void	sort_three(t_grid *push_swap);
 
@@ -83,5 +102,9 @@ int		stack_add_back(t_node **stack, t_node *new);
 t_node	*stack_new_node(int	new_value);
 void	free_stack(t_node **stack);
 int		stack_size(t_node *stack);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *str, int fd);
+int	ft_putnbr(int nbr);
+void	ft_putendl_fd(char *str, int fd);
 
 #endif

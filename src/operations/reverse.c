@@ -32,12 +32,16 @@ void	rra(t_grid *push_swap)
 {
 	reverse(&push_swap->stack_a);
 	write(1, "rra\n", 4);
+	push_swap->ops_count.rra++;
+	push_swap->ops_count.total_ops++;
 }
 
 void	rrb(t_grid *push_swap)
 {
 	reverse(&push_swap->stack_b);
 	write(1, "rrb\n", 4);
+	push_swap->ops_count.rrb++;
+	push_swap->ops_count.total_ops++;
 }
 
 void	rrr(t_grid *push_swap)
@@ -45,4 +49,6 @@ void	rrr(t_grid *push_swap)
 	reverse(&push_swap->stack_a);
 	reverse(&push_swap->stack_b);
 	write(1, "rrr\n", 4);
+	push_swap->ops_count.rrr++;
+	push_swap->ops_count.total_ops++;
 }

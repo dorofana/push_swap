@@ -34,12 +34,16 @@ void	sa(t_grid *push_swap)
 {
 	swap(&push_swap->stack_a);
 	write(1, "sa\n", 3);
+	push_swap->ops_count.sa++;
+	push_swap->ops_count.total_ops++;
 }
 
 void	sb(t_grid *push_swap)
 {
 	swap(&push_swap->stack_b);
 	write(1, "sb\n", 3);
+	push_swap->ops_count.sb++;
+	push_swap->ops_count.total_ops++;
 }
 
 void	ss(t_grid *push_swap)
@@ -47,4 +51,6 @@ void	ss(t_grid *push_swap)
 	swap(&push_swap->stack_a);
 	swap(&push_swap->stack_b);
 	write(1, "ss\n", 3);
+	push_swap->ops_count.ss++;
+	push_swap->ops_count.total_ops++;
 }

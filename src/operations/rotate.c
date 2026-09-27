@@ -34,12 +34,16 @@ void	ra(t_grid *push_swap)
 {
 	rotate(&push_swap->stack_a);
 	write(1,"ra\n", 3);
+	push_swap->ops_count.ra++;
+	push_swap->ops_count.total_ops++;
 }
 
 void	rb(t_grid *push_swap)
 {
 	rotate(&push_swap->stack_b);
 	write(1,"rb\n", 3);
+	push_swap->ops_count.rb++;
+	push_swap->ops_count.total_ops++;
 }
 
 void	rr(t_grid *push_swap)
@@ -47,4 +51,6 @@ void	rr(t_grid *push_swap)
 	rotate(&push_swap->stack_a);
 	rotate(&push_swap->stack_b);
 	write(1, "rr\n", 3);
+	push_swap->ops_count.rr++;
+	push_swap->ops_count.total_ops++;
 }
