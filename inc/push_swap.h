@@ -35,18 +35,6 @@ typedef enum s_sort_mode
 	MODE_BENCH
 } t_sort_mode;
 
-typedef struct s_grid
-{
-	t_node		*stack_a;
-	t_node		*stack_b;
-	int			size_a;
-	int			size_b;
-	float		disorder;
-	t_sort_mode	mode;
-	int			bench_mode; // just to indicate '--bench'
-	t_bench		ops_count;
-} t_grid;
-
 typedef struct s_bench
 {
 	int	sa;
@@ -62,6 +50,18 @@ typedef struct s_bench
 	int	pb;
 	int	total_ops;
 } t_bench;
+
+typedef struct s_grid
+{
+	t_node		*stack_a;
+	t_node		*stack_b;
+	int			size_a;
+	int			size_b;
+	float		disorder;
+	t_sort_mode	mode;
+	int			bench_mode;
+	t_bench		ops_count;
+} t_grid;
 
 /* OPERATIONS */
 void	sa(t_grid *push_swap);
@@ -104,7 +104,7 @@ void	free_stack(t_node **stack);
 int		stack_size(t_node *stack);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd);
-int	ft_putnbr(int nbr);
+void	ft_putnbr_fd(int nbr, int fd);
 void	ft_putendl_fd(char *str, int fd);
 
 #endif

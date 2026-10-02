@@ -7,8 +7,8 @@ static void	disorder_print(t_grid *push_swap)
 	int	dec;
 	
 	total = (int)(push_swap->disorder * 10000);
-	whole = total / 100;
-	dec = total_eval % 100;
+	whole = (int)(total / 100);
+	dec = (int)(total % 100);
 	ft_putstr_fd("[bench] disorder:  ", 2);
 	ft_putnbr_fd(whole, 2);
 	ft_putchar_fd('.', 2);
@@ -30,7 +30,7 @@ static void	mode_print(t_grid *push_swap)
 		str = "Complex / O(n log n)";
 	if (push_swap->disorder < 0.2)
 		str = "Simple / O(n^2)";
-	if (pusw_swap->disorder >= 0.2 && push_swap->disorder < 0.5)
+	if (push_swap->disorder >= 0.2 && push_swap->disorder < 0.5)
 		str = "Medium / O(n√n)";
 	if (push_swap->disorder >= 0.5)
 		str = "Complex / O(n log n)";
@@ -41,32 +41,32 @@ static void	mode_print(t_grid *push_swap)
 static void	operations_1(t_grid *push_swap)
 {
 	ft_putstr_fd("[bench] sa:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.sa, 2);
+	ft_putnbr_fd(push_swap->ops_count.sa, 2);
 	ft_putstr_fd("  sb:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.sb, 2);
+	ft_putnbr_fd(push_swap->ops_count.sb, 2);
 	ft_putstr_fd("  ss:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.ss, 2);
+	ft_putnbr_fd(push_swap->ops_count.ss, 2);
 	ft_putstr_fd("  pa:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.pa, 2);
+	ft_putnbr_fd(push_swap->ops_count.pa, 2);
 	ft_putstr_fd("  pb:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.pb, 2);
+	ft_putnbr_fd(push_swap->ops_count.pb, 2);
 	ft_putchar_fd('\n', 2);
 }
 
 static void	operations_2(t_grid *push_swap)
 {
 	ft_putstr_fd("[bench] ra:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.ra, 2);
+	ft_putnbr_fd(push_swap->ops_count.ra, 2);
 	ft_putstr_fd("  rb:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.rb, 2);
+	ft_putnbr_fd(push_swap->ops_count.rb, 2);
 	ft_putstr_fd("  rr:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.rr, 2);
+	ft_putnbr_fd(push_swap->ops_count.rr, 2);
 	ft_putstr_fd("  rra:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.rra, 2);
+	ft_putnbr_fd(push_swap->ops_count.rra, 2);
 	ft_putstr_fd("  rrb:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.rrb, 2);
+	ft_putnbr_fd(push_swap->ops_count.rrb, 2);
 	ft_putstr_fd("  rrr:  ", 2);
-	ft_putnbr_fd(push_swap->ops.count.rrr, 2);
+	ft_putnbr_fd(push_swap->ops_count.rrr, 2);
 	ft_putchar_fd('\n', 2);
 }
 
@@ -76,7 +76,6 @@ void	bench_print(t_grid *push_swap)
 		return ;
 	disorder_print(push_swap);
 	mode_print(push_swap);
-	total_print(push_swap);
 	ft_putstr_fd("[bench] total_ops:  ", 2);
 	ft_putnbr_fd(push_swap->ops_count.total_ops, 2);
 	ft_putchar_fd('\n', 2);
