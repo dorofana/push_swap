@@ -31,8 +31,7 @@ typedef enum s_sort_mode
 	MODE_ADAPTIVE,
 	MODE_SIMPLE,
 	MODE_MEDIUM,
-	MODE_COMPLEX,
-	MODE_BENCH
+	MODE_COMPLEX
 } t_sort_mode;
 
 typedef struct s_bench
@@ -91,7 +90,17 @@ float	count_disorder(t_node *stack, int size);
 void	bench_print(t_grid *push_swap);
 
 /* SORTING */
+int		is_sorted(t_node *stack);
+int		find_max(t_node *stack);
+int		find_min(t_node *stack);
 void	sort_three(t_grid *push_swap);
+void	sort_four(t_grid *push_swap, int stack_size);
+void	push_min_to_b(t_grid *push_swap, int stack_size);
+void	sort_five(t_grid *push_swap, int stack_size);
+void	tiny_sorting(t_grid *push_swap, int total_size);
+
+/* ALGORITHMS */
+void	sort_simple(t_grid *push_swap, int total_size);
 
 /* HELPER FUNCTIONS */
 long	ft_atol(const char *str);

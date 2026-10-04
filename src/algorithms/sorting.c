@@ -12,38 +12,47 @@
 
 #include "push_swap.h"
 
-static int	is_sorted(t_node *stack)
+void	tiny_sorting(t_grid *push_swap, int total_size)
 {
-	if (!stack || !stack->next)
-		return (1);
-	while (stack->next)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
+	if (total_size == 2)
+		sa(push_swap);
+	else if (total_size == 3)
+		sort_three(push_swap);
+	else if (total_size == 4)
+		sort_four(push_swap, 4);
+	else if (total_size == 5)
+		sort_five(push_swap, 5);
 }
 
-static int	find_max(t_node *stack)
+void	push_min_to_b(t_grid *push_swap, int stack_size)
 {
-	int		max;
+    int	min_pos;
 
-	max = stack->value;
-	while (stack)
+	min_pos = find_min(push_swap->stack_a);
+	if (min_pos <= (stack_size / 2))
 	{
-		if (stack->value > max)
-			max = stack->value;
-		stack = stack->next;
+		while (min_pos > 0)
+		{
+			ra(push_swap);
+			min_pos--;
+		}
 	}
-	return (max);
+	else
+	{
+		while (min_pos < stack_size)
+		{
+			rra(push_swap);
+			min_pos++;
+		}
+	}
+	pb(push_swap);
 }
 
 void	sort_three(t_grid *push_swap)
 {
-	int		max;
+	int	max;
 	t_node	*stack;
-	int		check_stack;
+	int	check_stack;
 
 	stack = push_swap->stack_a;
 	check_stack = is_sorted(stack);
@@ -57,4 +66,22 @@ void	sort_three(t_grid *push_swap)
 	stack = push_swap->stack_a;
 	if (stack->value > stack->next->value)
 		sa(push_swap);
+}
+
+void	sort_four(t_grid *push_swap, int stack_size)
+{
+	if (is_sorted(push_swap->stack_a) == 1)
+		return ;
+	push_min_to_b(push_swap, stack_size);
+	sort_three(push_swap);
+	pa(push_swap);
+}
+
+void	sort_five(t_grid *push_swap, int stack_size)
+{
+	if (is_sorted(push_swap->stack_a) == 1)
+		return ;
+	push_min_to_b(push_swap, stack_size);
+	sort_four(push_swap, stack_size - 1);
+	pa(push_swap);
 }

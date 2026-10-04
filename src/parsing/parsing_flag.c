@@ -28,7 +28,7 @@ void	indicate_flag(t_grid *push_swap, char *argv)
 	else if (ft_strcmp(argv, "--complex") == 0)
     	push_swap->mode = MODE_COMPLEX;
     	else if (ft_strcmp(argv, "--bench") == 0)
-    	push_swap->mode = MODE_BENCH;
+    	push_swap->bench_mode = 1;
 	else
     	push_swap->mode = MODE_ADAPTIVE;
 }
