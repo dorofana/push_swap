@@ -31,6 +31,8 @@ void	pa(t_grid *push_swap)
 {
 	push(&push_swap->stack_b, &push_swap->stack_a);
 	write(1, "pa\n", 3);
+	push_swap->size_a++;
+	push_swap->size_b--;
 	push_swap->ops_count.pa++;
 	push_swap->ops_count.total_ops++;
 }
@@ -39,6 +41,8 @@ void	pb(t_grid *push_swap)
 {
 	push(&push_swap->stack_a, &push_swap->stack_b);
 	write(1, "pb\n", 3);
+	push_swap->size_b++;
+	push_swap->size_a--;
 	push_swap->ops_count.pb++;
 	push_swap->ops_count.total_ops++;
 }

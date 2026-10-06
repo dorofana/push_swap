@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-void	tiny_sorting(t_grid *push_swap, int total_size)
+void	tiny_sorting(t_grid *push_swap)
 {
-	if (total_size == 2)
+	if (push_swap->size_a == 2)
 		sa(push_swap);
-	else if (total_size == 3)
+	else if (push_swap->size_a == 3)
 		sort_three(push_swap);
-	else if (total_size == 4)
+	else if (push_swap->size_a == 4)
 		sort_four(push_swap, 4);
-	else if (total_size == 5)
+	else if (push_swap->size_a == 5)
 		sort_five(push_swap, 5);
 }
 

@@ -20,6 +20,9 @@ SRCS = main.c \
 	lib/ft_isdigit.c \
 	lib/free_stack.c \
 	src/algorithms/simple.c \
+	src/algorithms/medium.c \
+	src/algorithms/adaptive.c \
+	src/algorithms/index.c \
 	src/algorithms/disorder.c \
 	src/algorithms/bench.c \
 	src/algorithms/sorting.c \

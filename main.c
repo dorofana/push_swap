@@ -31,13 +31,13 @@ static void	init_grid(t_grid *push_swap)
 static void	run_strategy(t_grid *push_swap)
 {
 	if (push_swap->mode == MODE_SIMPLE)
-		sort_simple(push_swap, stack_size(push_swap->stack_a));
+		sort_simple(push_swap, push_swap->size_a);
 	else if (push_swap->mode == MODE_MEDIUM)
-		/* medium sort */ ;
+		sort_medium(push_swap);
 	else if (push_swap->mode == MODE_COMPLEX)
 		/* complex sort */ ;
 	else
-		/* adaptive sort */ ;
+		sort_adaptive(push_swap);
 }
 
 int main(int argc, char **argv)
@@ -45,12 +45,14 @@ int main(int argc, char **argv)
 	t_grid push_swap;
 
 	if (argc < 2)
-		return (0);
+		return (1);
 	init_grid(&push_swap);
 	parse_args(&push_swap, argc, argv);
 	if (is_sorted(push_swap.stack_a) == 1)
 		return (0);
-	count_disorder(push_swap.stack_a, stack_size(push_swap.stack_a));
+	push_swap.size_a = stack_size(push_swap.stack_a);
+	push_swap.disorder = count_disorder(push_swap.stack_a, push_swap.size_a);
+	assign_index(push_swap.stack_a);
 	run_strategy(&push_swap);
 	if (push_swap.bench_mode == 1)
 		bench_print(&push_swap);

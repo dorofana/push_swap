@@ -21,7 +21,7 @@
 typedef struct s_node
 {
 	int				value;
-	// int				index;
+	int				index;
 	struct s_node	*next;
 	struct s_node	*prev;
 } t_node;
@@ -97,10 +97,13 @@ void	sort_three(t_grid *push_swap);
 void	sort_four(t_grid *push_swap, int stack_size);
 void	push_min_to_b(t_grid *push_swap, int stack_size);
 void	sort_five(t_grid *push_swap, int stack_size);
-void	tiny_sorting(t_grid *push_swap, int total_size);
+void	tiny_sorting(t_grid *push_swap);
+void	assign_index(t_node *stack);
 
 /* ALGORITHMS */
-void	sort_simple(t_grid *push_swap, int total_size);
+void	sort_simple(t_grid *push_swap, int stack_size);
+void	sort_medium(t_grid *push_swap);
+void	sort_adaptive(t_grid *push_swap);
 
 /* HELPER FUNCTIONS */
 long	ft_atol(const char *str);
