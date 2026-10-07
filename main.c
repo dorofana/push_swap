@@ -35,7 +35,7 @@ static void	run_strategy(t_grid *push_swap)
 	else if (push_swap->mode == MODE_MEDIUM)
 		sort_medium(push_swap);
 	else if (push_swap->mode == MODE_COMPLEX)
-		/* complex sort */ ;
+		quicksort_a(push_swap, push_swap->size_a, 0);
 	else
 		sort_adaptive(push_swap);
 }

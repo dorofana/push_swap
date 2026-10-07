@@ -38,7 +38,7 @@ static	void	push_chunks_back(t_grid *push_swap)
 	
 	while (push_swap->size_b > 0)
 	{
-		max_pos = find_max(push_swap->stack_b);
+		max_pos = find_max_pos(push_swap->stack_b);
 		if (max_pos <= (push_swap->size_b / 2))
 		{
 			while (max_pos > 0)

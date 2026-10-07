@@ -28,7 +28,7 @@ void	push_min_to_b(t_grid *push_swap, int stack_size)
 {
     int	min_pos;
 
-	min_pos = find_min(push_swap->stack_a);
+	min_pos = find_min_pos(push_swap->stack_a);
 	if (min_pos <= (stack_size / 2))
 	{
 		while (min_pos > 0)

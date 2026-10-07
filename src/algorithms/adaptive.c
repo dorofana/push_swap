@@ -7,5 +7,5 @@ void	sort_adaptive(t_grid *push_swap)
 	else if (push_swap->disorder >= 0.2 && push_swap->disorder < 0.5)
 		sort_medium(push_swap);
 	else
-		//sort_complex(push_swap);
+		quicksort_a(push_swap, push_swap->size_a, 0);
 }

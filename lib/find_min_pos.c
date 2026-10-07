@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	find_min(t_node *stack)
+int	find_min_pos(t_node *stack)
 {
 	int	min;
 	int	min_position;
