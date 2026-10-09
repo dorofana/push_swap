@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_top_three.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/09 16:15:35 by adorofei          #+#    #+#             */
+/*   Updated: 2026/10/09 16:15:36 by adorofei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	decide_cases_a(t_grid *push_swap, int a, int b, int c)
@@ -25,9 +37,9 @@ void	decide_cases_a(t_grid *push_swap, int a, int b, int c)
 
 void	sort_top_three_a(t_grid *push_swap)
 {
-	int a;
-	int b;
-	int c;
+	int	a;
+	int	b;
+	int	c;
 
 	a = push_swap->stack_a->value;
 	b = push_swap->stack_a->next->value;

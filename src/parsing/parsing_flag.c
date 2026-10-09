@@ -22,13 +22,13 @@ int	is_flag(char *str)
 void	indicate_flag(t_grid *push_swap, char *argv)
 {
 	if (ft_strcmp(argv, "--simple") == 0)
-    	push_swap->mode = MODE_SIMPLE;
+		push_swap->mode = MODE_SIMPLE;
 	else if (ft_strcmp(argv, "--medium") == 0)
-    	push_swap->mode = MODE_MEDIUM;
+		push_swap->mode = MODE_MEDIUM;
 	else if (ft_strcmp(argv, "--complex") == 0)
-    	push_swap->mode = MODE_COMPLEX;
-    	else if (ft_strcmp(argv, "--bench") == 0)
-    	push_swap->bench_mode = 1;
+		push_swap->mode = MODE_COMPLEX;
+	else if (ft_strcmp(argv, "--bench") == 0)
+		push_swap->bench_mode = 1;
 	else
-    	push_swap->mode = MODE_ADAPTIVE;
+		push_swap->mode = MODE_ADAPTIVE;
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   simple.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/09 16:35:20 by adorofei          #+#    #+#             */
+/*   Updated: 2026/10/09 16:35:20 by adorofei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	sort_simple(t_grid *push_swap, int stack_size)
@@ -16,5 +28,5 @@ void	sort_simple(t_grid *push_swap, int stack_size)
 		current_size--;
 	}
 	while (push_swap->stack_b != NULL)
-        pa(push_swap);
+		pa(push_swap);
 }

@@ -6,7 +6,7 @@
 /*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 13:25:46 by adorofei          #+#    #+#             */
-/*   Updated: 2026/09/23 17:02:19 by adorofei         ###   ########.fr       */
+/*   Updated: 2026/10/09 17:40:51 by adorofei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 
 typedef struct s_node
 {
-	int		value;
-	int		index;
+	int				value;
+	int				index;
 	struct s_node	*next;
 	struct s_node	*prev;
-} t_node;
+}	t_node;
 
 typedef enum s_sort_mode
 {
@@ -32,7 +32,7 @@ typedef enum s_sort_mode
 	MODE_SIMPLE,
 	MODE_MEDIUM,
 	MODE_COMPLEX
-} t_sort_mode;
+}	t_sort_mode;
 
 typedef struct s_bench
 {
@@ -48,19 +48,27 @@ typedef struct s_bench
 	int	pa;
 	int	pb;
 	int	total_ops;
-} t_bench;
+}	t_bench;
 
 typedef struct s_grid
 {
 	t_node		*stack_a;
 	t_node		*stack_b;
-	int		size_a;
-	int		size_b;
+	int			size_a;
+	int			size_b;
 	float		disorder;
 	t_sort_mode	mode;
-	int		bench_mode;
+	int			bench_mode;
 	t_bench		ops_count;
-} t_grid;
+}	t_grid;
+
+typedef struct s_quicksort
+{
+	int	pivot;
+	int	start_len;
+	int	rotated;
+	int	pushed;
+}	t_sort;
 
 /* OPERATIONS */
 void	sa(t_grid *push_swap);
@@ -76,11 +84,11 @@ void	pa(t_grid *push_swap);
 void	pb(t_grid *push_swap);
 
 /* PARSING FLAGS */
-int	is_flag(char *str);
+int		is_flag(char *str);
 void	indicate_flag(t_grid *push_swap, char *argv);
 
 /* PARSING ARGV */
-int	process_values(t_grid *push_swap, char *val_str);
+int		process_values(t_grid *push_swap, char *val_str);
 void	parse_args(t_grid *push_swap, int argc, char **argv);
 
 /* COUNTING DISORDER OF THE STACK */
@@ -90,10 +98,10 @@ float	count_disorder(t_node *stack, int size);
 void	bench_print(t_grid *push_swap);
 
 /* SORTING */
-int	is_sorted(t_node *stack);
-int	find_max(t_node *stack);
-int	find_max_pos(t_node *stack);
-int	find_min_pos(t_node *stack);
+int		is_sorted(t_node *stack);
+int		find_max(t_node *stack);
+int		find_max_pos(t_node *stack);
+int		find_min_pos(t_node *stack);
 void	sort_three(t_grid *push_swap);
 void	sort_four(t_grid *push_swap, int stack_size);
 void	sort_five(t_grid *push_swap, int stack_size);
@@ -104,7 +112,7 @@ void	bubble_sort_array(int *arr, int len);
 void	decide_cases_a(t_grid *push_swap, int a, int b, int c);
 void	sort_top_three_a(t_grid *push_swap);
 void	sort_top_three_b(t_grid *push_swap);
-int	get_median(t_node *stack, int len);
+int		get_median(t_node *stack, int len);
 
 /* ALGORITHMS */
 void	sort_simple(t_grid *push_swap, int stack_size);
@@ -116,12 +124,12 @@ void	quicksort_b(t_grid *push_swap, int len, int count_rotations);
 /* HELPER FUNCTIONS */
 long	ft_atol(const char *str);
 char	**ft_split(const char *s, char c);
-int	ft_isdigit(int c);
-int	ft_strcmp(const char *s1, const char *s2);
-int	stack_add_back(t_node **stack, t_node *new);
-t_node	*stack_new_node(int	new_value);
+int		ft_isdigit(int c);
+int		ft_strcmp(const char *s1, const char *s2);
+int		stack_add_back(t_node **stack, t_node *new);
+t_node	*stack_new_node(int new_value);
 void	free_stack(t_node **stack);
-int	stack_size(t_node *stack);
+int		stack_size(t_node *stack);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd);
 void	ft_putnbr_fd(int nbr, int fd);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/09 16:01:53 by adorofei          #+#    #+#             */
+/*   Updated: 2026/10/09 16:01:54 by adorofei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	init_t_bench(t_bench *ops_count)
@@ -40,9 +52,9 @@ static void	run_strategy(t_grid *push_swap)
 		sort_adaptive(push_swap);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_grid push_swap;
+	t_grid	push_swap;
 
 	if (argc < 2)
 		return (1);

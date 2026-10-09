@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/09 16:10:44 by adorofei          #+#    #+#             */
-/*   Updated: 2026/10/09 16:10:46 by adorofei         ###   ########.fr       */
+/*   Created: 2026/10/09 16:33:31 by adorofei          #+#    #+#             */
+/*   Updated: 2026/10/09 16:33:32 by adorofei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_putstr_fd(char *str, int fd)
+void	assign_index(t_node *stack)
 {
-	if (!str)
-		return ;
-	while (*str)
+	int		index;
+	t_node	*current;
+	t_node	*to_compare;
+
+	current = stack;
+	while (current)
 	{
-		ft_putchar_fd(*str, fd);
-		str++;
+		index = 0;
+		to_compare = stack;
+		while (to_compare)
+		{
+			if (to_compare->value < current->value)
+				index++;
+			to_compare = to_compare->next;
+		}
+		current->index = index;
+		current = current->next;
 	}
 }

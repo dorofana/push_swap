@@ -6,7 +6,7 @@
 /*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 14:45:43 by adorofei          #+#    #+#             */
-/*   Updated: 2026/09/12 17:09:11 by adorofei         ###   ########.fr       */
+/*   Updated: 2026/10/09 16:20:26 by adorofei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	rotate(t_node **stack)
 void	ra(t_grid *push_swap)
 {
 	rotate(&push_swap->stack_a);
-	write(1,"ra\n", 3);
+	write(1, "ra\n", 3);
 	push_swap->ops_count.ra++;
 	push_swap->ops_count.total_ops++;
 }
@@ -41,7 +41,7 @@ void	ra(t_grid *push_swap)
 void	rb(t_grid *push_swap)
 {
 	rotate(&push_swap->stack_b);
-	write(1,"rb\n", 3);
+	write(1, "rb\n", 3);
 	push_swap->ops_count.rb++;
 	push_swap->ops_count.total_ops++;
 }

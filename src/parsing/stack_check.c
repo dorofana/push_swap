@@ -17,9 +17,9 @@ static int	check_nbr(char *nbr)
 	int	i;
 
 	i = 0;
-	if (nbr[i] =='+' || nbr[i] == '-')
-			i++;
-	if (nbr[i] =='+' || nbr[i] == '-' || !nbr[i])
+	if (nbr[i] == '+' || nbr[i] == '-')
+		i++;
+	if (nbr[i] == '+' || nbr[i] == '-' || !nbr[i])
 		return (1);
 	while (nbr[i])
 	{

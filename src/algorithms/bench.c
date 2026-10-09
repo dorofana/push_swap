@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bench.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/09 16:33:00 by adorofei          #+#    #+#             */
+/*   Updated: 2026/10/09 16:33:01 by adorofei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	disorder_print(t_grid *push_swap)
@@ -5,7 +17,7 @@ static void	disorder_print(t_grid *push_swap)
 	int	total;
 	int	whole;
 	int	dec;
-	
+
 	total = (int)(push_swap->disorder * 10000);
 	whole = (int)(total / 100);
 	dec = (int)(total % 100);
@@ -21,7 +33,7 @@ static void	disorder_print(t_grid *push_swap)
 static void	mode_print(t_grid *push_swap)
 {
 	char	*str;
-	
+
 	if (push_swap->mode == MODE_SIMPLE)
 		str = "Simple / O(n^2)";
 	if (push_swap->mode == MODE_MEDIUM)
@@ -72,7 +84,7 @@ static void	operations_2(t_grid *push_swap)
 
 void	bench_print(t_grid *push_swap)
 {
-	if(!push_swap->bench_mode)
+	if (!push_swap->bench_mode)
 		return ;
 	disorder_print(push_swap);
 	mode_print(push_swap);

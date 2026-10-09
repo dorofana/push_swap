@@ -6,7 +6,7 @@
 /*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 17:07:43 by adorofei          #+#    #+#             */
-/*   Updated: 2026/09/23 17:07:45 by adorofei         ###   ########.fr       */
+/*   Updated: 2026/10/09 17:32:33 by adorofei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	tiny_sorting(t_grid *push_swap)
 
 void	push_min_to_b(t_grid *push_swap, int stack_size)
 {
-    int	min_pos;
+	int	min_pos;
 
 	min_pos = find_min_pos(push_swap->stack_a);
 	if (min_pos <= (stack_size / 2))
@@ -50,9 +50,9 @@ void	push_min_to_b(t_grid *push_swap, int stack_size)
 
 void	sort_three(t_grid *push_swap)
 {
-	int	max;
+	int		max;
 	t_node	*stack;
-	int	check_stack;
+	int		check_stack;
 
 	stack = push_swap->stack_a;
 	check_stack = is_sorted(stack);

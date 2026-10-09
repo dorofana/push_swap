@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 /* IMPLEMENTED FOR PUSH SWAP*/
-t_node	*stack_new_node(int	new_value)
+t_node	*stack_new_node(int new_value)
 {
 	t_node	*new;
 

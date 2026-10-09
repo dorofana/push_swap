@@ -6,7 +6,7 @@
 /*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 15:19:03 by adorofei          #+#    #+#             */
-/*   Updated: 2026/09/12 16:52:17 by adorofei         ###   ########.fr       */
+/*   Updated: 2026/10/09 16:20:45 by adorofei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 static void	push(t_node **src, t_node **dest)
 {
 	t_node	*node;
+
 	if (!src || !*src || !dest)
-		return;
+		return ;
 	node = *src;
 	*src = node->next;
 	if (*src)

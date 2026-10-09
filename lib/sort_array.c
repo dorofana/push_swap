@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_array.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adorofei <adorofei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/09 16:15:27 by adorofei          #+#    #+#             */
+/*   Updated: 2026/10/09 16:15:28 by adorofei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	bubble_sort_array(int *arr, int len)
@@ -42,8 +54,8 @@ int	get_median(t_node *stack, int len)
 		current = current->next;
 		i++;
 	}
-    bubble_sort_array(arr, len);
-    median = arr[len / 2];
-    free(arr);
-    return (median);
+	bubble_sort_array(arr, len);
+	median = arr[len / 2];
+	free(arr);
+	return (median);
 }
